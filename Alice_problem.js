@@ -21,6 +21,7 @@ const subsequent_div = (num, base)=>{
     else{
         resuldiv = num;
     }
+    console.log(resuldiv);
     return resuldiv;
 }
 //Check if the number in the elected base is palyndrome
@@ -30,17 +31,17 @@ const check_palindromebase=(num,base)=>{
   
     var basednum = subsequent_div(num,base);
     if(num>=base){
-        basednum.forEach((digit, pos) => {
-            //first repetition compares the first digit with thw last
-            //sencond repetition compares the second digit with the penultimate number an so on
-            if(digit!==basednum[basednum.length-1-pos]){
+         //first repetition compares the first digit with the last
+        //sencond repetition compares the second digit with the penultimate number an so on
+        for(var i =0;i<basednum.length;i++){
+            if(basednum[i]!==basednum[basednum.length-1-i]){
                 i = basednum.length;
                 ispalindrom = false;
             }
             else {
                 ispalindrom = true;
             }
-        });    
+        }   
     }
     else{
         ispalindrom= true;
